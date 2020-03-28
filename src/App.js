@@ -3,12 +3,15 @@ import React from 'react';
 import './App.css';
 
 function App() {
+  const divStyle = {
+    textAlign: 'center'
+  }
   return (
     // в JSX всегда должен быть корневой элемент
     // className это атрибут class
     <div>
-      <div className="App">
-        <h1>Hello World!</h1>
+      <div style={divStyle} className="App">
+        <h1 style={{color: 'green', fontSize: '22px'}}>Hello World!</h1>
       </div>
       <p>Hello</p>
     </div>    
