@@ -1,6 +1,7 @@
 // визде где используется JSX нужно импортировать React, т.к. собирается через createElement
 import React from 'react';
 import './App.css';
+import Car from './Car/Car';
 
 function App() {
   const divStyle = {
@@ -9,11 +10,12 @@ function App() {
   return (
     // в JSX всегда должен быть корневой элемент
     // className это атрибут class
-    <div>
-      <div style={divStyle} className="App">
+    <div style={divStyle}>
+      <div className="App">
         <h1 style={{color: 'green', fontSize: '22px'}}>Hello World!</h1>
       </div>
       <p>Hello</p>
+      <Car />
     </div>    
   );
 
