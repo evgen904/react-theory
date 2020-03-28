@@ -8,15 +8,59 @@
 
   <!-- Don't use this in production: -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    .car {
+      display: inline-block;
+      vertical-align: top;
+      border: 2px solid #ccc;
+      box-shadow: 2px 2px 1px #eee;
+      padding: 10px;
+      margin: 0 10px 0 0;
+    }
+  </style>
+
 </head>
 <body>
 <div id="root"></div>
+<!--<div id="root2"></div>-->
+
 <script type="text/babel">
 
+  function Car(props) {
+    return (
+        // className - class
+        <div className="car">
+          <h3>{props.name}</h3>
+          <p>Year: <strong>{props.year}</strong></p>
+          <small>This is car</small>
+        </div>
+    )
+  }
+
+  const App = (
+      <div>
+        <Car name="Ford Focus" year="2017" />
+        <Car name="Audi A3" year="2015" />
+        <Car name="Mazda 3" year="2010" />
+      </div>
+  )
+
+  // инекция реакт компонента в html
   ReactDOM.render(
-      <h1>Hello, world!</h1>,
-      document.getElementById('root')
-  );
+      // передаем компонент, функцию, которая будет тегом
+      App,
+      // куда инициализируем все структуру
+      document.querySelector('#root')
+  )
+
+  // ReactDOM.render(
+  //     // передаем компонент, функцию, которая будет тегом
+  //     <Car name="Mazda" year="2010" />,
+  //     // куда инициализируем все структуру
+  //     document.querySelector('#root2')
+  // )
+
 
 </script>
 <!--
