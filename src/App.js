@@ -15,8 +15,9 @@ function App() {
         <h1 style={{color: 'green', fontSize: '22px'}}>Hello World!</h1>
       </div>
       <p>Hello</p>
-      <Car />
-      <Car />
+      <Car name={'Ford'} year={2018} />
+      <Car name='Mazda' year={2010} />
+      <Car name='Audi' year={2019} />
     </div>    
   );
 
