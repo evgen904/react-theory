@@ -20,16 +20,36 @@ class App extends Component {
     })
   }
 
-  hendleInput = (event) => {
-    this.setState({
-      pageTitle: event.target.value
-    })
-  }
-
   changeTitleHandler = (pageTitle) => {
     this.setState({
       pageTitle
     })
+  }
+
+  onChangeName(name, index) {
+    // сначала берем текущие данные со стейта
+    // ложим в переменную, меняем нужне значение
+    const car = this.state.cars[index]
+    car.name = name
+
+    // потом заного получаем весь список массива
+    // в нем меняем нужный элемент массива
+    // и после этого сетим массив
+    const cars = [...this.state.cars]
+    cars[index] = car
+    this.setState({cars})
+  }
+
+  deleteHandler(index) {
+    // чтобы вызвать такой метод, его нужно байндить
+    // this.deleteHandler.bind(this, index)
+    // чтобы функция не брала свой контекст this
+
+    // либо ее вызывать через стрелочную функцию
+    // () => this.deleteHandler(index)
+    const cars = [...this.state.cars]
+    cars.splice(index, 1)
+    this.setState({cars})
   }
 
   render() {
@@ -47,6 +67,8 @@ class App extends Component {
             name={car.name}
             year={car.year}
             onChangetTitle={() => this.changeTitleHandler(car.name)}
+            onChangeName={event => this.onChangeName(event.target.value, index)}
+            onDelete={this.deleteHandler.bind(this, index)}
           />
         )
       })
@@ -58,27 +80,10 @@ class App extends Component {
           <h1 style={{color: 'green', fontSize: '22px'}}>
            {this.state.pageTitle}
           </h1>
-
-          <input type="text" onChange={this.hendleInput} />
-
           <button onClick={this.toggleCarsHandler}>Toggle cars</button>
-
-          { cars }
-
-          {/* {
-            this.state.showCars
-              ? this.state.cars.map((car, index) => {
-                return(
-                  <Car 
-                    key={index}
-                    name={car.name}
-                    year={car.year}
-                    onChangetTitle={() => this.changeTitleHandler(car.name)}
-                  />
-                )
-              })
-              : null
-          } */}
+          <div>
+            { cars }
+          </div>
         </div>
       </div>
     );
