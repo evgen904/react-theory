@@ -17,7 +17,12 @@ class App extends Component {
     this.setState({
       pageTitle: newTitle
     })
+  }
 
+  hendleInput = (event) => {
+    this.setState({
+      pageTitle: event.target.value
+    })
   }
 
   render() {
@@ -37,7 +42,8 @@ class App extends Component {
            {this.state.pageTitle}
           </h1>
 
-          {/* bind более правильный способ */}
+          <input type="text" onChange={this.hendleInput} />
+
           <button onClick={this.changeTitleHandler.bind(this, 'Changed!')}>Change title</button>
 
           <Car 
