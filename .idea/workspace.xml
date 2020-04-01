@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car/Car.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car/Car.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car/Car.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car/Car.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car/Car.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car/Car.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,7 @@
       <workItem from="1585406221653" duration="1915000" />
       <workItem from="1585554900487" duration="360000" />
       <workItem from="1585767806353" duration="261000" />
-      <workItem from="1585768198623" duration="4126000" />
+      <workItem from="1585768198623" duration="4478000" />
     </task>
     <servers />
   </component>

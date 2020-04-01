@@ -1,3 +1,5 @@
+$color: green;
+
 .Car {
   display: inline-block;
   margin: 0 10px 10px 0;
@@ -10,12 +12,12 @@
   outline: none;
 }
 .input.green {
-  border: 1px solid green;
+  border: 1px solid $color;
 }
 .input.red {
   border: 1px solid red;
 }
 .input.bold {
-  border: 2px solid green;
+  border: 2px solid $color;
   font-weight: bold;
 }
