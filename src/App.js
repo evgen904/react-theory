@@ -62,7 +62,7 @@ class App extends Component {
     if (this.state.showCars) {
       cars = this.state.cars.map((car, index) => {
         return(
-          <Car 
+          <Car
             key={index}
             name={car.name}
             year={car.year}
@@ -81,7 +81,11 @@ class App extends Component {
            {this.state.pageTitle}
           </h1>
           <button onClick={this.toggleCarsHandler}>Toggle cars</button>
-          <div>
+          <div style={{
+            width: 400,
+            margin: 'auto',
+            paddingTop: '20px'
+          }}>
             { cars }
           </div>
         </div>
