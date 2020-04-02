@@ -5,6 +5,8 @@ import Car from './Car/Car';
 class App extends Component {
 
   constructor(props) {
+    console.log('App constructor, Вызывается первый но к апи реакта не относится, к бэку стучаться не надо тут');
+
     super(props);
 
     this.state = {
@@ -66,7 +68,18 @@ class App extends Component {
     this.setState({cars})
   }
 
+  componentWillMount() {
+    console.log('App componentWillMount, первый жизненый цикл реакта, вызывается до отрисовки компонента стейта нет, к бэкенду стучаться не надо');
+  }
+
+  componentDidMount() {
+    console.log('App componentDidMount, после отрисовки компонента, обычно все тут вызывается');
+  }
+
   render() {
+
+    console.log('App render, рендер компонента');
+
     const divStyle = {
       textAlign: 'center'
     }
