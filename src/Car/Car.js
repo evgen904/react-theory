@@ -2,6 +2,9 @@ import React from 'react';
 import classes from './Car.module.scss';
 import withClass from '../hoc/withClass'
 
+// https://ru.reactjs.org/docs/typechecking-with-proptypes.html
+import PropTypes from 'prop-types'
+
 // В реакте лучше чаще использовать функциональные компоненты, т.к. они занимают меньше ресурсов для отрисовки,
 // обычно React.Component идет основным с хуками, а внутри уже функциональные компоненты
 
@@ -33,6 +36,14 @@ class Car extends React.Component {
       </React.Fragment>
     )
   }
+}
+
+Car.propTyps = {
+  name: PropTypes.string.isRequired,
+  year: PropTypes.number,
+  onChangeName: PropTypes.func,
+  onChangetTitle: PropTypes.func,
+  onDelete: PropTypes.func,
 }
 
 export default withClass(Car, classes.Car);
