@@ -5,15 +5,15 @@ import Car from './Car/Car';
 class App extends Component {
 
   constructor(props) {
-    console.log('App constructor, Вызывается первый но к апи реакта не относится, к бэку стучаться не надо тут');
+    //console.log('App constructor, Вызывается первый но к апи реакта не относится, к бэку стучаться не надо тут');
 
     super(props);
 
     this.state = {
       cars: [
         {name: 'Ford', year: 2010},
-        {name: 'Mazda', year: 2018},
-        {name: 'Audi', year: 2020}
+        // {name: 'Mazda', year: 2018},
+        // {name: 'Audi', year: 2020}
       ],
       pageTitle: 'React components',
       showCars: false
@@ -69,16 +69,16 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log('App componentWillMount, первый жизненый цикл реакта, вызывается до отрисовки компонента стейта нет, к бэкенду стучаться не надо');
+    //console.log('App componentWillMount, первый жизненый цикл реакта, вызывается до отрисовки компонента стейта нет, к бэкенду стучаться не надо');
   }
 
   componentDidMount() {
-    console.log('App componentDidMount, после отрисовки компонента, обычно все тут вызывается');
+    //console.log('App componentDidMount, после отрисовки компонента, обычно все тут вызывается');
   }
 
   render() {
 
-    console.log('App render, рендер компонента');
+    //console.log('App render, рендер компонента');
 
     const divStyle = {
       textAlign: 'center'

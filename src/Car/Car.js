@@ -1,12 +1,42 @@
 import React from 'react';
-import Radium from 'radium';
+//import Radium from 'radium';
 import classes from './Car.module.scss';
 
 // В реакте лучше чаще использовать функциональные компоненты, т.к. они занимают меньше ресурсов для отрисовки,
 // обычно React.Component идет основным с хуками, а внутри уже функциональные компоненты
 
 class Car extends React.Component {
+
+  // жизненые циклы компонента
+
+  componentWillReceiveProps(nextProps) {
+    // преднозначен для синхронизации локального стейта, если он есть, с входящими свойствами
+    // используется редко
+    console.log('Car componentWillReceiveProps', nextProps);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // здесь мы можем оптимизировать наше приложение
+    // если возвращем true то компонент должен измениться, т.е. перерисовать
+    console.log('Car shouldComponentUpdate', nextProps, nextState);
+    //shouldComponentUpdate должен что-то вернуть
+    return nextProps.name.trim() !== this.props.name.trim()
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    // знаем что компонент будет изменен, готовимся к его изменению
+    // также можно синхронизировать локальный state, если он есть, с параметрами которые будут входить, и т.д.
+    console.log('Car componentWillUpdate', nextProps, nextState);
+  }
+
+  componentDidUpdate() {
+    console.log('Car componentDidUpdate');
+  }
+
   render() {
+    // после подготовки компонента, происходит его рендер
+    console.log('Car render');
+
     const inputClasses = [classes.input];
 
     if (this.props.name !== '') {
@@ -44,4 +74,4 @@ class Car extends React.Component {
   }
 }
 
-export default Radium(Car);
+export default Car;
