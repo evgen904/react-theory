@@ -33,6 +33,11 @@ class Car extends React.Component {
     console.log('Car componentDidUpdate');
   }
 
+  componentWillUnmount() {
+    // срабатывает после удаления компонента
+    console.log('Car componentWillUnmount');
+  }
+
   render() {
     // после подготовки компонента, происходит его рендер
     console.log('Car render');
