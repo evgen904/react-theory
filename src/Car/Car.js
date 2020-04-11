@@ -29,8 +29,28 @@ class Car extends React.Component {
     console.log('Car componentWillUpdate', nextProps, nextState);
   }
 
+  // статический метод
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // по типу componentWillUpdate
+    // но обезопасит жизненый цикл,
+    // к примеру в componentWillUpdate и shouldComponentUpdate можно обратиться к this/setState()
+    // хотя на этот момент компонент еще не будет отрисован, у могут появиться некоторые проблемы
+    // для этого ввели getDerivedStateFromProps он запрещает преобразовать напрямую
+    console.log('Car getDerivedStateFromProps', nextProps, prevState)
+
+    // вернет результирующий state для нашего компонента, (объект)
+    return prevState
+  }
+
   componentDidUpdate() {
     console.log('Car componentDidUpdate');
+  }
+
+  getSnapshotBeforeUpdate() {
+    // появляется сразу после рендера, но перед тем как компонент обновится componentDidUpdate
+    // данный метод позволяет получить не измененое еще дом дерево до обновления
+    // для примера можно сохранить позицию скролла человека, после того как обновится приложения
+    console.log('Car getSnapshotBeforeUpdate');
   }
 
   componentWillUnmount() {
