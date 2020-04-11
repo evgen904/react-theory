@@ -63,9 +63,9 @@ class Car extends React.Component {
     console.log('Car render');
 
     // получаем некоторую ошибку
-    if (Math.random() > 0.7) {
-      throw new Error('Car random failed')
-    }
+    // if (Math.random() > 0.7) {
+    //   throw new Error('Car random failed')
+    // }
 
     const inputClasses = [classes.input];
 

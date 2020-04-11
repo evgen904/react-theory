@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Car from './Car/Car';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Counter from "./Counter/Counter";
 
 class App extends Component {
 
@@ -13,8 +14,8 @@ class App extends Component {
     this.state = {
       cars: [
         {name: 'Ford', year: 2010},
-        {name: 'Mazda', year: 2018},
-        {name: 'Audi', year: 2020}
+        // {name: 'Mazda', year: 2018},
+        // {name: 'Audi', year: 2020}
       ],
       pageTitle: 'React components',
       showCars: false
@@ -69,9 +70,9 @@ class App extends Component {
     this.setState({cars})
   }
 
-  componentWillMount() {
-    //console.log('App componentWillMount, первый жизненый цикл реакта, вызывается до отрисовки компонента стейта нет, к бэкенду стучаться не надо');
-  }
+  // componentWillMount() {
+  //   //console.log('App componentWillMount, первый жизненый цикл реакта, вызывается до отрисовки компонента стейта нет, к бэкенду стучаться не надо');
+  // }
 
   componentDidMount() {
     //console.log('App componentDidMount, после отрисовки компонента, обычно все тут вызывается');
@@ -109,7 +110,12 @@ class App extends Component {
           <h1 style={{color: 'green', fontSize: '22px'}}>
            {this.props.title}
           </h1>
-          <button onClick={this.toggleCarsHandler}>Toggle cars</button>
+
+          <Counter />
+
+          <hr/>
+
+          <button style={{marginTop: '20px'}} onClick={this.toggleCarsHandler}>Toggle cars</button>
           <div style={{
             width: 400,
             margin: 'auto',
